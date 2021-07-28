@@ -17,7 +17,7 @@ class Sockets {
 
             client.on('publicacion',(nombre, publicacion, imagen) =>{
                 console.log(nombre + publicacion + imagen);
-                this.io.emit('publicaciones',(nombre, publicacion, imagen));
+                this.io.emit('publicaciones', {nombre, publicacion, imagen});
             })
 
         });
