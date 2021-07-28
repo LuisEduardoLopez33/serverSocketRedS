@@ -15,7 +15,14 @@ class Sockets {
                 this.io.emit('msj-output-client', data);
             })
 
+            client.on('publicacion',(nombre, publicacion, imagen) =>{
+                console.log(nombre + publicacion + imagen);
+                this.io.emit('publicaciones',(nombre, publicacion, imagen));
+            })
+
         });
+
+
     }
 
 }
